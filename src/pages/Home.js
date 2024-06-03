@@ -1,38 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import '../assets/css/estilo.css';
-import Uno from "../assets/imagens/Carro1.jpg";
-import Fusca from "../assets/imagens/Fuscão.jpg";
-import Astra from "../assets/imagens/Astra.jpg";
-import Turbina from "../assets/imagens/Turbina.png";
-import Embreagem from "../assets/imagens/Kitembreagem.png";
-import Volante from "../assets/imagens/PeçasVolante.png";
+import Uno from "../assets/imagens/Carro1.jpg"
+import Fusca from "../assets/imagens/Fuscão.jpg"
+import Astra from "../assets/imagens/Astra.jpg"
+import Turbina from "../assets/imagens/Turbina.png"
+import Embreagem from "../assets/imagens/Kitembreagem.png"
+import Volante from "../assets/imagens/PeçasVolante.png"
 
 const Home = () => {
-  const [veiculos, setVeiculos] = useState([]);
-  const [pecas, setPecas] = useState([]);
-
-  useEffect(() => {
-    const dadosVeiculos = [
-      { id: 1, imagem: Uno, titulo: 'FIAT UNO', descricao: 'Mille Fire Economy 1.0 Manual Flex', preco: 'R$ 20.000' },
-      { id: 2, imagem: Fusca, titulo: 'VOLKSWAGEN FUSCA', descricao: '1.5 8V Gasolina 2P Manual', preco: 'R$ 12.000' },
-      { id: 3, imagem: Astra, titulo: 'CHEVROLET ASTRA', descricao: '2.0 Elegance Manual - 2006', preco: 'R$ 28.000' },
-    ];
-
-    const dadosPecas = [
-      { id: 1, imagem: Turbina, titulo: 'TURBINA - R594', descricao: 'Turbina Master Power', preco: 'R$ 2.950,00' },
-      { id: 2, imagem: Embreagem, titulo: 'KIT EMBREAGEM LUK', descricao: 'Fiorino-Palio-Siena-Strada-Uno', preco: 'R$ 458,00' },
-      { id: 3, imagem: Volante, titulo: 'VOLANTE FTR', descricao: 'Volante Fuel Tech Universal', preco: 'R$ 797,00' },
-    ];
-
-    setVeiculos(dadosVeiculos);
-    setPecas(dadosPecas);
-  }, []);
-
   return (
     <div>
-      
       <section id="busca-veiculos">
         <div className="container">
           <h2 className="section-title">Encontre seu Veículo</h2>
@@ -50,33 +29,35 @@ const Home = () => {
               <label htmlFor="estado">Estado:</label>
               <select id="estado" name="estado">
                 <option value="">Selecione</option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
+                
+                <option value="">Selecione</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
               </select>
             </div>
             <div className="form-group">
@@ -105,45 +86,83 @@ const Home = () => {
           </form>
         </div>
       </section>
-      
-      <section id="catalogo-veiculos">
+      <section id="catalogo">
         <div className="container">
           <h2 className="section-title"><strong>Carros em Destaque</strong></h2>
           <div className="row">
-            {veiculos.map((veiculo) => (
-              <div className="col-lg-4 col-md-6" key={veiculo.id}>
-                <div className="card">
-                  <img src={veiculo.imagem} className="card-img-top" alt={veiculo.titulo} />
-                  <div className="card-body">
-                    <h5 className="card-title"><strong>{veiculo.titulo}</strong></h5>
-                    <p className="card-text">{veiculo.descricao}</p>
-                    <h5 className="card-title"><strong>{veiculo.preco}</strong></h5>
-                    <a href="#" className="btn btn-primary">Comprar</a>
-                  </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="card">
+                <img src={Uno} className="card-img-top" alt="Carro 1" />
+                <div className="card-body">
+                  <h5 className="card-title"><strong>FIAT UNO</strong></h5>
+                  <p className="card-text">Mille Fire Economy 1.0 Manual Flex </p>
+                  <h5 className="card-title"><strong>R$ 20.000</strong></h5>
+                  <a href="#" className="btn btn-primary">Comprar</a>
                 </div>
               </div>
-            ))}
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="card">
+                <img src={Fusca} className="card-img-top" alt="Carro 2" />
+                <div className="card-body">
+                  <h5 className="card-title"><strong>VOLKSWAGEN FUSCA</strong></h5>
+                  <p className="card-text">1.5 8V Gasolina 2P Manual</p>
+                  <h5 className="card-title"><strong>R$ 12.000</strong></h5>
+                  <a href="#" className="btn btn-primary">Comprar</a>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="card">
+                <img src={Astra} className="card-img-top" alt="Carro 3" />
+                <div className="card-body">
+                  <h5 className="card-title"><strong>CHEVROLET ASTRA</strong></h5>
+                  <p className="card-text">2.0 Elegance Manual - 2006</p>
+                  <h5 className="card-title"><strong>R$ 28.000</strong></h5>
+                  <a href="#" className="btn btn-primary">Comprar</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      
-      <section id="catalogo-pecas">
+      <section id="catalogo">
         <div className="container">
           <h2 className="section-title"><strong>Peças em Destaque</strong></h2>
           <div className="row">
-            {pecas.map((peca) => (
-              <div className="col-lg-4 col-md-6" key={peca.id}>
-                <div className="card">
-                  <img src={peca.imagem} className="card-img-top" alt={peca.titulo} />
-                  <div className="card-body">
-                    <h5 className="card-title"><strong>{peca.titulo}</strong></h5>
-                    <p className="card-text">{peca.descricao}</p>
-                    <h5 className="card-title"><strong>{peca.preco}</strong></h5>
-                    <a href="#" className="btn btn-primary">Comprar</a>
-                  </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="card">
+                <img src={Turbina} className="card-img-top" alt="Carro 1" />
+                <div className="card-body">
+                  <h5 className="card-title"><strong>TURBINA - R594</strong></h5>
+                  <p className="card-text">Turbina Master Power.</p>
+                  <h5 className="card-title"><strong>R$ 2.950,00</strong></h5>
+                  <a href="#" className="btn btn-primary">Comprar</a>
                 </div>
               </div>
-            ))}
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="card">
+                <img src={Embreagem} className="card-img-top" alt="Carro 2" />
+                <div className="card-body">
+                  <h5 className="card-title"><strong>KIT EMBREAGEM LUK</strong></h5>
+                  <p className="card-text">Fiorino-Palio-Siena-Strada-Uno</p>
+                  <h5 className="card-title"><strong>R$ 458,00</strong></h5>
+                  <a href="#" className="btn btn-primary">Comprar</a>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="card">
+                <img src={Volante} className="card-img-top" alt="Carro 3" />
+                <div className="card-body">
+                  <h5 className="card-title"><strong>VOLANTE FTR</strong></h5>
+                  <p className="card-text">Volante Fuel Tech Universal.</p>
+                  <h5 className="card-title"><strong>R$ 797,00</strong></h5>
+                  <a href="#" className="btn btn-primary">Comprar</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -152,3 +171,4 @@ const Home = () => {
 };
 
 export default Home;
+
