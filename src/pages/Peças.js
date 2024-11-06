@@ -10,6 +10,7 @@ import Pneu from '../assets/imagens/Pneu.png';
 import Velasignicao from '../assets/imagens/Velasignição.png';
 import Bateria from '../assets/imagens/Bateria.png';
 
+
 function Pecas() {
  
   const [pecas, setPecas] = useState([]);
